@@ -35,36 +35,46 @@ button{font-family:inherit;}
 .pg.on{display:block;}
 
 /* HERO */
-.hero{min-height:calc(100vh - 60px);
-  background:radial-gradient(ellipse 80% 60% at 60% 40%,#370d10 0%,#0e0508 60%,#070305 100%);
-  display:flex;align-items:center;position:relative;overflow:hidden;padding:60px 80px;}
-.hero-grid{position:absolute;inset:0;opacity:.04;
-  background-image:repeating-linear-gradient(0deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 40px),
-    repeating-linear-gradient(90deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 40px);}
-.hero-glow{position:absolute;right:8%;top:20%;width:500px;height:500px;border-radius:50%;
-  background:radial-gradient(circle,rgba(121,23,28,.22) 0%,transparent 70%);pointer-events:none;}
-.hero-deco{position:absolute;right:5%;top:50%;transform:translateY(-50%);
-  width:420px;height:420px;opacity:.1;pointer-events:none;}
-.hero-content{z-index:1;max-width:580px;}
-.hero-eyebrow{font-size:11px;letter-spacing:6px;color:var(--gold-l);margin-bottom:20px;
-  display:flex;align-items:center;gap:10px;}
-.hero-eyebrow::after{content:'';flex:1;max-width:60px;height:1px;background:var(--gold-l);opacity:.5;}
-.hero-h1{font-size:72px;font-weight:700;letter-spacing:10px;color:#fff;
-  text-shadow:0 4px 40px rgba(0,0,0,.6);margin-bottom:10px;line-height:1.1;}
+/* HERO - split layout (inspired by brand poster) */
+.hero{min-height:calc(100vh - 60px);display:grid;grid-template-columns:46% 54%;
+  position:relative;overflow:hidden;}
+.hero-left{background:#79171C;padding:72px 54px;display:flex;flex-direction:column;
+  justify-content:center;position:relative;}
+.hero-circle-bg{position:absolute;width:400px;height:400px;border-radius:50%;
+  background:rgba(0,0,0,.14);top:-90px;left:-110px;pointer-events:none;}
+.hero-circle-bg2{position:absolute;width:200px;height:200px;border-radius:50%;
+  background:rgba(255,255,255,.04);bottom:60px;right:40px;pointer-events:none;}
+.hero-right{background:#fbece5;display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;padding:50px;}
+.hr-bg-dots{position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(121,23,28,.09) 1px,transparent 1px);
+  background-size:26px 26px;pointer-events:none;}
+.hr-center{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:20px;}
+.hr-motif{width:288px;height:288px;opacity:.62;}
+.hr-pills{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px;}
+.hr-pill{padding:8px 14px;background:rgba(121,23,28,.07);border:1px solid rgba(121,23,28,.16);
+  border-radius:24px;font-size:11.5px;color:var(--text);letter-spacing:.3px;text-align:center;}
+.hero-eyebrow{font-size:10px;letter-spacing:6px;color:rgba(255,255,255,.45);margin-bottom:18px;text-transform:uppercase;}
+.hero-h1{font-size:82px;font-weight:700;letter-spacing:16px;color:#fff;margin-bottom:8px;line-height:1;}
 .hero-h1 em{color:var(--gold-l);font-style:normal;}
-.hero-tagline{font-size:15px;letter-spacing:2px;color:rgba(255,255,255,.65);margin-bottom:14px;}
-.hero-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.9;margin-bottom:40px;max-width:420px;}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
-.btn-primary{padding:13px 32px;background:var(--red);color:#fff;border:none;
-  border-radius:6px;font-size:14px;font-weight:600;letter-spacing:1.5px;cursor:pointer;transition:all .25s;}
-.btn-primary:hover{background:var(--red-d);transform:translateY(-2px);box-shadow:0 8px 24px rgba(121,23,28,.35);}
-.btn-outline{padding:13px 32px;background:transparent;color:rgba(255,255,255,.85);
-  border:1px solid rgba(255,255,255,.3);border-radius:6px;font-size:14px;
+.hero-motto{font-size:17px;letter-spacing:5px;color:rgba(255,255,255,.85);margin-bottom:5px;}
+.hero-sub{font-size:11px;letter-spacing:3px;color:rgba(255,255,255,.38);margin-bottom:24px;}
+.hero-desc{font-size:13px;color:rgba(255,255,255,.52);line-height:2;margin-bottom:30px;max-width:340px;}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;}
+.btn-primary{padding:12px 28px;background:var(--gold);color:var(--dark);border:none;
+  border-radius:6px;font-size:14px;font-weight:700;letter-spacing:1.5px;cursor:pointer;transition:all .25s;}
+.btn-primary:hover{background:var(--gold-l);transform:translateY(-2px);box-shadow:0 8px 24px rgba(216,176,124,.4);}
+.btn-outline{padding:12px 28px;background:transparent;color:rgba(255,255,255,.8);
+  border:1px solid rgba(255,255,255,.28);border-radius:6px;font-size:14px;
   letter-spacing:1.5px;cursor:pointer;transition:all .25s;}
 .btn-outline:hover{border-color:var(--gold-l);color:var(--gold-l);}
-.hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:40px;}
-.hero-badge{padding:6px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
-  border-radius:20px;font-size:11px;color:rgba(255,255,255,.6);letter-spacing:1px;}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px;}
+.hero-badge{padding:5px 12px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);
+  border-radius:20px;font-size:11px;color:rgba(255,255,255,.6);letter-spacing:.5px;}
+.hero-brand-foot{display:flex;align-items:center;gap:11px;padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.12);margin-top:auto;}
+.hero-brand-text{font-size:12px;font-weight:700;color:rgba(255,255,255,.58);letter-spacing:4px;line-height:1.4;}
+.hero-brand-text small{font-size:9px;display:block;letter-spacing:2px;font-weight:400;opacity:.8;}
 
 /* SECTION HEADERS */
 .sec-head{text-align:center;margin-bottom:40px;}
@@ -321,11 +331,36 @@ button{font-family:inherit;}
 .pr{font-size:11px;color:var(--muted);line-height:1.7;}
 .pr strong{color:var(--text);font-weight:600;}
 
+/* WENCHUANG */
+.wc-section{padding:64px 40px 80px;background:var(--bg2);}
+.wc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1200px;margin:0 auto;}
+.wc-card{background:var(--white);border-radius:14px;border:1px solid var(--border);
+  overflow:hidden;cursor:pointer;transition:all .28s;}
+.wc-card:hover{transform:translateY(-5px);box-shadow:0 14px 38px var(--shadow);border-color:var(--gold);}
+.wc-img{height:196px;display:flex;align-items:center;justify-content:center;font-size:66px;
+  position:relative;}
+.wc-bar{position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(to right,var(--red),var(--gold));}
+.wc-info{padding:13px 15px 15px;}
+.wc-tag{display:inline-block;padding:2px 9px;border-radius:4px;font-size:10px;font-weight:700;margin-bottom:7px;}
+.wct-r{background:var(--red);color:#fff;}
+.wct-g{background:var(--gold);color:var(--dark);}
+.wct-b{background:var(--bg2);color:var(--muted);border:1px solid var(--border);}
+.wc-name{font-size:13.5px;font-weight:600;color:var(--dark);margin-bottom:4px;line-height:1.4;}
+.wc-sub{font-size:11px;color:var(--muted);margin-bottom:9px;line-height:1.5;}
+.wc-foot{display:flex;align-items:center;justify-content:space-between;}
+.wc-price{font-size:15px;font-weight:700;color:var(--red);}
+.wc-buy{padding:5px 13px;background:var(--red);color:#fff;border:none;border-radius:5px;
+  font-size:11px;cursor:pointer;transition:all .22s;}
+.wc-buy:hover{background:var(--red-d);}
+
 @media(max-width:900px){
   .nav{padding:0 14px;}
   .nav-links a{padding:0 8px;font-size:12px;}
-  .hero{padding:40px 20px;}
-  .hero-h1{font-size:50px;}
+  .hero{grid-template-columns:1fr;}
+  .hero-right{display:none;}
+  .hero-left{padding:50px 22px;}
+  .hero-h1{font-size:54px;letter-spacing:10px;}
   .feat-grid{grid-template-columns:repeat(2,1fr);}
   .feat-grid .feat-card:last-child{grid-column:span 2;}
   .tryon-layout,.workshop-layout,.community-layout{grid-template-columns:1fr;padding:0 16px 40px;}
@@ -335,6 +370,8 @@ button{font-family:inherit;}
   .scene-cats{padding-left:16px;}
   .flow-section{padding:56px 16px;}
   .features-strip{padding:40px 16px 56px;}
+  .wc-section{padding:48px 16px 60px;}
+  .wc-grid{grid-template-columns:repeat(2,1fr);}
 }
 </style>
 </head>
@@ -344,15 +381,15 @@ button{font-family:inherit;}
 <nav class="nav">
   <div class="logo" onclick="go('home')">
     <svg class="logo-mark" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-      <rect x="1" y="1" width="34" height="34" rx="8" fill="#F9EBE3"/>
-      <path d="M14.5 7 C10 12 9 19 11.5 29" stroke="#79171C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-      <path d="M21.5 7 C26 12 27 19 24.5 29" stroke="#79171C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-      <line x1="17" y1="5" x2="19" y2="9" stroke="#79171C" stroke-width="1.8" stroke-linecap="round"/>
-      <line x1="19" y1="5" x2="17" y2="9" stroke="#79171C" stroke-width="1.8" stroke-linecap="round"/>
-      <circle cx="17.2" cy="4.8" r="1.3" fill="#79171C"/>
-      <circle cx="18.8" cy="4.8" r="1.3" fill="#79171C"/>
-      <circle cx="17.2" cy="9.4" r="1.3" fill="#79171C"/>
-      <circle cx="18.8" cy="9.4" r="1.3" fill="#79171C"/>
+      <rect x="1" y="1" width="34" height="34" rx="8" fill="#79171C"/>
+      <path d="M13 7 C7.5 13 6.5 21 10 30" stroke="white" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <path d="M23 7 C28.5 13 29.5 21 26 30" stroke="white" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <line x1="15.5" y1="5" x2="20.5" y2="9.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="20.5" y1="5" x2="15.5" y2="9.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="15.5" cy="4.7" r="1.5" fill="white"/>
+      <circle cx="20.5" cy="4.7" r="1.5" fill="white"/>
+      <circle cx="15.5" cy="9.8" r="1.5" fill="white"/>
+      <circle cx="20.5" cy="9.8" r="1.5" fill="white"/>
     </svg>
     <span class="logo-name">旗韵</span>
   </div>
@@ -368,33 +405,14 @@ button{font-family:inherit;}
 <!-- HOME -->
 <div class="pg on" id="p-home">
   <div class="hero">
-    <div class="hero-grid"></div>
-    <div class="hero-glow"></div>
-    <!-- 品牌延展云纹装饰图形 -->
-    <div class="hero-deco">
-      <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" fill="none" color="#D8B07C">
-        <circle cx="150" cy="88" r="68" stroke="currentColor" stroke-width="1.2"/>
-        <circle cx="88" cy="150" r="68" stroke="currentColor" stroke-width="1.2"/>
-        <circle cx="212" cy="150" r="68" stroke="currentColor" stroke-width="1.2"/>
-        <circle cx="150" cy="212" r="68" stroke="currentColor" stroke-width="1.2"/>
-        <path d="M110 110 C128 138 172 162 190 190" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="110" cy="110" r="5.5" fill="currentColor"/>
-        <circle cx="190" cy="190" r="5.5" fill="currentColor"/>
-        <line x1="105" y1="103" x2="110" y2="108" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <line x1="110" y1="103" x2="105" y2="108" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <circle cx="105" cy="102" r="2.5" fill="currentColor"/>
-        <circle cx="111" cy="102" r="2.5" fill="currentColor"/>
-        <line x1="190" y1="196" x2="195" y2="191" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <line x1="195" y1="196" x2="190" y2="191" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <circle cx="193" cy="198" r="2.5" fill="currentColor"/>
-        <circle cx="199" cy="198" r="2.5" fill="currentColor"/>
-      </svg>
-    </div>
-    <div class="hero-content">
+    <!-- 左侧：品牌深红内容区（参考VI海报风格） -->
+    <div class="hero-left">
+      <div class="hero-circle-bg"></div>
+      <div class="hero-circle-bg2"></div>
       <p class="hero-eyebrow">走近非遗 · 品悟旗韵</p>
       <h1 class="hero-h1">旗<em>韵</em></h1>
-      <p class="hero-tagline" style="font-size:17px;letter-spacing:4px;color:rgba(255,255,255,.75);margin-bottom:8px;">一袭旗袍，一梦芳华</p>
-      <p class="hero-tagline" style="font-size:12px;letter-spacing:2px;color:rgba(255,255,255,.4);margin-bottom:14px;">AI 新中式穿搭平台 · 让东方美学融入日常</p>
+      <p class="hero-motto">一袭旗袍，一梦芳华</p>
+      <p class="hero-sub">AI 新中式穿搭平台</p>
       <p class="hero-desc">上传一张照片，告诉我们你的场景和偏好，AI 帮你找到真正适合自己的新中式穿搭。从灵感到成衣，一站完成。</p>
       <div class="hero-btns">
         <button class="btn-primary" onclick="go('tryon')">开始 AI 试穿</button>
@@ -406,6 +424,53 @@ button{font-family:inherit;}
         <span class="hero-badge">场景化选款</span>
         <span class="hero-badge">非遗工艺护照</span>
         <span class="hero-badge">AI 设计生成</span>
+      </div>
+      <!-- 品牌标识（仿海报左下角排版） -->
+      <div class="hero-brand-foot">
+        <svg width="28" height="28" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="34" height="34" rx="7" fill="rgba(255,255,255,.15)"/>
+          <path d="M13 7 C7.5 13 6.5 21 10 30" stroke="white" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          <path d="M23 7 C28.5 13 29.5 21 26 30" stroke="white" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          <line x1="15.5" y1="5" x2="20.5" y2="9.5" stroke="white" stroke-width="1.7" stroke-linecap="round"/>
+          <line x1="20.5" y1="5" x2="15.5" y2="9.5" stroke="white" stroke-width="1.7" stroke-linecap="round"/>
+          <circle cx="15.5" cy="4.7" r="1.4" fill="white"/>
+          <circle cx="20.5" cy="4.7" r="1.4" fill="white"/>
+          <circle cx="15.5" cy="9.8" r="1.4" fill="white"/>
+          <circle cx="20.5" cy="9.8" r="1.4" fill="white"/>
+        </svg>
+        <div class="hero-brand-text"><small>qi</small>旗&nbsp;&nbsp;&nbsp;<small>yun</small>韵</div>
+      </div>
+    </div>
+    <!-- 右侧：淡青红视觉区（品牌 VI 延展图形） -->
+    <div class="hero-right">
+      <div class="hr-bg-dots"></div>
+      <div class="hr-center">
+        <!-- 品牌延展图形：四圆云纹 + 盘扣丝线 -->
+        <svg class="hr-motif" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="150" cy="88" r="78" stroke="#79171C" stroke-width="1.5"/>
+          <circle cx="88" cy="150" r="78" stroke="#79171C" stroke-width="1.5"/>
+          <circle cx="212" cy="150" r="78" stroke="#79171C" stroke-width="1.5"/>
+          <circle cx="150" cy="212" r="78" stroke="#79171C" stroke-width="1.5"/>
+          <circle cx="150" cy="150" r="138" stroke="#79171C" stroke-width=".8" stroke-dasharray="5 9" opacity=".28"/>
+          <path d="M110 110 C130 140 170 160 190 190" stroke="#79171C" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="110" cy="110" r="6" fill="#79171C"/>
+          <circle cx="190" cy="190" r="6" fill="#79171C"/>
+          <line x1="103" y1="102" x2="109" y2="108" stroke="#79171C" stroke-width="2" stroke-linecap="round"/>
+          <line x1="109" y1="102" x2="103" y2="108" stroke="#79171C" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="103" cy="101" r="2.6" fill="#79171C"/>
+          <circle cx="110" cy="101" r="2.6" fill="#79171C"/>
+          <line x1="190" y1="196" x2="197" y2="190" stroke="#79171C" stroke-width="2" stroke-linecap="round"/>
+          <line x1="197" y1="196" x2="190" y2="190" stroke="#79171C" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="190" cy="198" r="2.6" fill="#79171C"/>
+          <circle cx="197" cy="198" r="2.6" fill="#79171C"/>
+        </svg>
+        <!-- 功能特色胶囊 -->
+        <div class="hr-pills">
+          <span class="hr-pill">🧵 苏绣非遗 · 工艺护照</span>
+          <span class="hr-pill">🎨 AI 文字驱动设计</span>
+          <span class="hr-pill">👗 上传照片虚拟试穿</span>
+          <span class="hr-pill">📐 精准尺码建议</span>
+        </div>
       </div>
     </div>
   </div>
@@ -443,6 +508,78 @@ button{font-family:inherit;}
       <div class="feat-card" onclick="go('workshop')"><div class="feat-ico">✨</div><div class="feat-name">AI 共创工坊</div><div class="feat-desc">文字生成设计 · 纹样共创 · 限量打样</div></div>
       <div class="feat-card" onclick="go('community')"><div class="feat-ico">💬</div><div class="feat-name">灵感社区</div><div class="feat-desc">穿搭笔记 · 同款试穿 · 共创投票</div></div>
       <div class="feat-card" onclick="go('wardrobe')"><div class="feat-ico">👗</div><div class="feat-name">数字衣橱</div><div class="feat-desc">身材档案 · 试穿记录 · 工艺护照</div></div>
+    </div>
+  </div>
+
+  <!-- 品牌文创精选 -->
+  <div class="wc-section">
+    <div class="sec-head">
+      <p class="sec-eye">CULTURAL CREATIVE</p>
+      <h2 class="sec-h2">品牌文创精选</h2>
+      <div class="sec-div"><div class="sdl"></div><div class="sdd"></div><div class="sdl r"></div></div>
+      <p class="sec-desc">以旗韵美学为灵感，将非遗纹样延展至日常器物，传递东方生活美学</p>
+    </div>
+    <div class="wc-grid">
+      <div class="wc-card" onclick="alert('旗韵团扇·苏绣联名款\n限量200把 · 苏绣非遗工艺\n圆形绢扇 · 直径38cm\n可加购专属礼盒包装')">
+        <div class="wc-img" style="background:linear-gradient(135deg,#f9ebe3,#f3e8df);">
+          🪭
+          <div class="wc-bar"></div>
+        </div>
+        <div class="wc-info">
+          <span class="wc-tag wct-r">限量版</span>
+          <div class="wc-name">旗韵团扇 · 苏绣联名款</div>
+          <div class="wc-sub">苏绣工艺 · 圆形绢扇 38cm · 限量200把</div>
+          <div class="wc-foot">
+            <span class="wc-price">¥ 368</span>
+            <button class="wc-buy" onclick="event.stopPropagation();alert('已加入购物车')">加入购物车</button>
+          </div>
+        </div>
+      </div>
+      <div class="wc-card" onclick="alert('旗韵宫扇摆件\n品牌云纹图案 · 纯铜支架\n适合陈设展示，送礼首选')">
+        <div class="wc-img" style="background:linear-gradient(135deg,#fdf3e4,#f9ebe3);">
+          🏮
+          <div class="wc-bar"></div>
+        </div>
+        <div class="wc-info">
+          <span class="wc-tag wct-g">礼品推荐</span>
+          <div class="wc-name">旗韵宫扇摆件 · 品牌联名</div>
+          <div class="wc-sub">纯铜支架 · 云纹图案 · 礼盒装</div>
+          <div class="wc-foot">
+            <span class="wc-price">¥ 528</span>
+            <button class="wc-buy" onclick="event.stopPropagation();alert('已加入购物车')">加入购物车</button>
+          </div>
+        </div>
+      </div>
+      <div class="wc-card" onclick="alert('云纹真丝丝巾·暗红版\n100%桑蚕丝 · 品牌云纹图案\n90×90cm · 附专属礼袋')">
+        <div class="wc-img" style="background:linear-gradient(135deg,#79171C,#520F12);">
+          <span style="font-size:56px;">🧣</span>
+          <div class="wc-bar"></div>
+        </div>
+        <div class="wc-info">
+          <span class="wc-tag wct-r">新品</span>
+          <div class="wc-name">云纹真丝丝巾 · 暗红版</div>
+          <div class="wc-sub">100% 桑蚕丝 · 90×90cm · 云纹品牌图案</div>
+          <div class="wc-foot">
+            <span class="wc-price">¥ 298</span>
+            <button class="wc-buy" onclick="event.stopPropagation();alert('已加入购物车')">加入购物车</button>
+          </div>
+        </div>
+      </div>
+      <div class="wc-card" onclick="alert('云纹真丝丝巾·浅粉版\n100%桑蚕丝 · 淡青红底色\n品牌云纹图案 · 附专属礼袋')">
+        <div class="wc-img" style="background:linear-gradient(135deg,#fbece5,#f9ebe3);">
+          <span style="font-size:56px;">🧣</span>
+          <div class="wc-bar"></div>
+        </div>
+        <div class="wc-info">
+          <span class="wc-tag wct-b">经典款</span>
+          <div class="wc-name">云纹真丝丝巾 · 浅粉版</div>
+          <div class="wc-sub">100% 桑蚕丝 · 90×90cm · 淡青红配色</div>
+          <div class="wc-foot">
+            <span class="wc-price">¥ 298</span>
+            <button class="wc-buy" onclick="event.stopPropagation();alert('已加入购物车')">加入购物车</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -891,6 +1028,68 @@ function swWTab(id,el){
     if(e)e.style.display=x===id?(x==='ppassport'?'block':'grid'):'none';
   });
 }
+
+/* ====== 修复所有交互 ====== */
+// 多选chip（场景偏好、风格偏好）
+document.querySelectorAll('.chips .chip').forEach(c=>{
+  c.addEventListener('click',()=>c.classList.toggle('on'));
+});
+// 单选chip（社区筛选标签，每次只选一个）
+document.querySelectorAll('.body-filter .chip').forEach(c=>{
+  c.addEventListener('click',function(){
+    this.parentElement.querySelectorAll('.chip').forEach(x=>{
+      x.classList.remove('on');
+      x.style.background='';x.style.borderColor='';x.style.color='';
+    });
+    this.classList.add('on');
+  });
+});
+// 帖子点赞
+document.querySelectorAll('.pa').forEach(p=>{
+  p.addEventListener('click',function(){
+    const t=this.textContent.trim();
+    if(t.startsWith('❤️')){
+      const n=parseInt(t.replace(/[^0-9]/g,''))||0;
+      this.textContent='❤️ '+(n+1).toLocaleString();
+      this.style.color='var(--red)';
+    } else if(t.startsWith('💬')){
+      alert('评论功能即将开放，敬请期待！');
+    } else if(t.includes('收藏')){
+      this.textContent='⭐ 已收藏';
+      this.style.color='var(--gold)';
+    } else if(t.includes('共创投票')){
+      alert('已投票！\n投票成功可获得 50 会员积分\n高人气设计将进入品牌打样流程');
+    } else if(t.includes('会员积分')){
+      alert('积分兑换功能即将上线！');
+    }
+  });
+});
+// 一键试穿同款
+document.querySelectorAll('.pa-hi').forEach(p=>{
+  p.addEventListener('click',function(){
+    const t=this.textContent;
+    if(t.includes('试穿')){go('tryon');}
+    else if(t.includes('投票')){alert('已投票！获得 50 会员积分');}
+    else if(t.includes('积分')){alert('积分兑换功能即将上线！');}
+  });
+});
+// 关注按钮
+document.querySelectorAll('.follow-btn').forEach(btn=>{
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    if(this.textContent.trim()==='+ 关注'){
+      this.textContent='✓ 已关注';
+      this.style.background='var(--red)';
+      this.style.color='#fff';
+      this.style.borderColor='var(--red)';
+    } else {
+      this.textContent='+ 关注';
+      this.style.background='';
+      this.style.color='';
+      this.style.borderColor='';
+    }
+  });
+});
 </script>
 </body>
 </html>

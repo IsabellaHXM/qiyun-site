@@ -6,11 +6,12 @@
 <title>旗韵 · AI 新中式穿搭平台</title>
 <style>
 :root {
-  --red:#C0304F; --red-d:#8C1F3C; --red-bg:#FDF0F3;
-  --gold:#C8922E; --gold-l:#E8C06A; --gold-bg:#FDF8EE;
+  --red:#79171C; --red-d:#520F12; --red-bg:#F9EBE3;
+  --gold:#D8B07C; --gold-l:#E8C99A; --gold-bg:#FAF3E4;
   --bg:#FAF8F5; --bg2:#F3EEE8; --white:#fff;
   --dark:#1A100C; --text:#2D1F18; --muted:#856E62;
   --border:#E5D8CE; --shadow:rgba(26,16,12,0.07);
+  --grey:#E2DBD5;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'PingFang SC','Helvetica Neue',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
@@ -21,9 +22,7 @@ button{font-family:inherit;}
   background:rgba(250,248,245,.94);backdrop-filter:blur(16px);
   border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 40px;}
 .logo{display:flex;align-items:center;gap:9px;cursor:pointer;}
-.logo-mark{width:34px;height:34px;border-radius:50%;
-  background:linear-gradient(135deg,var(--red),var(--gold));
-  display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700;}
+.logo-mark{width:36px;height:36px;flex-shrink:0;}
 .logo-name{font-size:19px;font-weight:700;letter-spacing:4px;color:var(--red);}
 .nav-links{margin-left:auto;display:flex;list-style:none;}
 .nav-links a{display:block;padding:0 16px;line-height:60px;font-size:13.5px;
@@ -37,13 +36,15 @@ button{font-family:inherit;}
 
 /* HERO */
 .hero{min-height:calc(100vh - 60px);
-  background:radial-gradient(ellipse 80% 60% at 60% 40%,#3d0d1c 0%,#0e0508 60%,#070305 100%);
+  background:radial-gradient(ellipse 80% 60% at 60% 40%,#370d10 0%,#0e0508 60%,#070305 100%);
   display:flex;align-items:center;position:relative;overflow:hidden;padding:60px 80px;}
-.hero-grid{position:absolute;inset:0;opacity:.05;
+.hero-grid{position:absolute;inset:0;opacity:.04;
   background-image:repeating-linear-gradient(0deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 40px),
     repeating-linear-gradient(90deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 40px);}
 .hero-glow{position:absolute;right:8%;top:20%;width:500px;height:500px;border-radius:50%;
-  background:radial-gradient(circle,rgba(192,48,79,.18) 0%,transparent 70%);pointer-events:none;}
+  background:radial-gradient(circle,rgba(121,23,28,.22) 0%,transparent 70%);pointer-events:none;}
+.hero-deco{position:absolute;right:5%;top:50%;transform:translateY(-50%);
+  width:420px;height:420px;opacity:.1;pointer-events:none;}
 .hero-content{z-index:1;max-width:580px;}
 .hero-eyebrow{font-size:11px;letter-spacing:6px;color:var(--gold-l);margin-bottom:20px;
   display:flex;align-items:center;gap:10px;}
@@ -56,7 +57,7 @@ button{font-family:inherit;}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
 .btn-primary{padding:13px 32px;background:var(--red);color:#fff;border:none;
   border-radius:6px;font-size:14px;font-weight:600;letter-spacing:1.5px;cursor:pointer;transition:all .25s;}
-.btn-primary:hover{background:var(--red-d);transform:translateY(-2px);box-shadow:0 8px 24px rgba(192,48,79,.35);}
+.btn-primary:hover{background:var(--red-d);transform:translateY(-2px);box-shadow:0 8px 24px rgba(121,23,28,.35);}
 .btn-outline{padding:13px 32px;background:transparent;color:rgba(255,255,255,.85);
   border:1px solid rgba(255,255,255,.3);border-radius:6px;font-size:14px;
   letter-spacing:1.5px;cursor:pointer;transition:all .25s;}
@@ -82,7 +83,7 @@ button{font-family:inherit;}
 .flow-step:not(:last-child)::after{content:'›';position:absolute;right:-6px;top:16px;font-size:20px;color:var(--border);}
 .flow-num{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--red),var(--red-d));
   color:#fff;display:flex;align-items:center;justify-content:center;
-  font-size:15px;font-weight:700;margin-bottom:10px;box-shadow:0 4px 14px rgba(192,48,79,.25);}
+  font-size:15px;font-weight:700;margin-bottom:10px;box-shadow:0 4px 14px rgba(121,23,28,.25);}
 .flow-name{font-size:13px;font-weight:600;color:var(--dark);margin-bottom:4px;text-align:center;}
 .flow-desc{font-size:11px;color:var(--muted);text-align:center;line-height:1.7;padding:0 6px;}
 
@@ -126,7 +127,7 @@ button{font-family:inherit;}
 .preview-panel{background:var(--white);border:1px solid var(--border);border-radius:12px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   min-height:500px;position:relative;padding:28px;}
-.preview-fig{font-size:96px;filter:drop-shadow(0 4px 20px rgba(192,48,79,.2));transition:all .4s;}
+.preview-fig{font-size:96px;filter:drop-shadow(0 4px 20px rgba(121,23,28,.2));transition:all .4s;}
 .result-tags{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;margin-top:14px;}
 .rtag{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;}
 .rt-r{background:var(--red-bg);color:var(--red);}
@@ -154,7 +155,7 @@ button{font-family:inherit;}
 .prod:hover{transform:translateY(-4px);box-shadow:0 14px 40px var(--shadow);}
 .prod-img{height:188px;display:flex;align-items:center;justify-content:center;
   font-size:56px;background:linear-gradient(135deg,#f7e6ec,#fdf4e4);position:relative;}
-.prod-overlay{position:absolute;inset:0;background:rgba(192,48,79,.85);
+.prod-overlay{position:absolute;inset:0;background:rgba(121,23,28,.85);
   display:flex;align-items:center;justify-content:center;
   color:#fff;font-size:13px;font-weight:600;letter-spacing:1px;
   opacity:0;transition:opacity .22s;}
@@ -189,7 +190,7 @@ button{font-family:inherit;}
 .ai-textarea{width:100%;min-height:108px;padding:13px;border:1.5px solid var(--border);
   border-radius:10px;font-size:14px;color:var(--text);background:var(--bg);
   resize:vertical;outline:none;line-height:1.7;transition:border .22s;}
-.ai-textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(192,48,79,.07);}
+.ai-textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(121,23,28,.07);}
 .example-chips{display:flex;gap:7px;flex-wrap:wrap;margin:9px 0 18px;}
 .ex-chip{padding:6px 12px;background:var(--bg);border:1px solid var(--border);
   border-radius:20px;font-size:11px;cursor:pointer;color:var(--muted);transition:all .2s;}
@@ -342,7 +343,17 @@ button{font-family:inherit;}
 <!-- NAV -->
 <nav class="nav">
   <div class="logo" onclick="go('home')">
-    <div class="logo-mark">袍</div>
+    <svg class="logo-mark" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="34" height="34" rx="8" fill="#F9EBE3"/>
+      <path d="M14.5 7 C10 12 9 19 11.5 29" stroke="#79171C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <path d="M21.5 7 C26 12 27 19 24.5 29" stroke="#79171C" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <line x1="17" y1="5" x2="19" y2="9" stroke="#79171C" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="19" y1="5" x2="17" y2="9" stroke="#79171C" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="17.2" cy="4.8" r="1.3" fill="#79171C"/>
+      <circle cx="18.8" cy="4.8" r="1.3" fill="#79171C"/>
+      <circle cx="17.2" cy="9.4" r="1.3" fill="#79171C"/>
+      <circle cx="18.8" cy="9.4" r="1.3" fill="#79171C"/>
+    </svg>
     <span class="logo-name">旗韵</span>
   </div>
   <ul class="nav-links">
@@ -359,10 +370,31 @@ button{font-family:inherit;}
   <div class="hero">
     <div class="hero-grid"></div>
     <div class="hero-glow"></div>
+    <!-- 品牌延展云纹装饰图形 -->
+    <div class="hero-deco">
+      <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" fill="none" color="#D8B07C">
+        <circle cx="150" cy="88" r="68" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="88" cy="150" r="68" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="212" cy="150" r="68" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="150" cy="212" r="68" stroke="currentColor" stroke-width="1.2"/>
+        <path d="M110 110 C128 138 172 162 190 190" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="110" cy="110" r="5.5" fill="currentColor"/>
+        <circle cx="190" cy="190" r="5.5" fill="currentColor"/>
+        <line x1="105" y1="103" x2="110" y2="108" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="110" y1="103" x2="105" y2="108" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="105" cy="102" r="2.5" fill="currentColor"/>
+        <circle cx="111" cy="102" r="2.5" fill="currentColor"/>
+        <line x1="190" y1="196" x2="195" y2="191" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="195" y1="196" x2="190" y2="191" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="193" cy="198" r="2.5" fill="currentColor"/>
+        <circle cx="199" cy="198" r="2.5" fill="currentColor"/>
+      </svg>
+    </div>
     <div class="hero-content">
-      <p class="hero-eyebrow">AI 新中式穿搭平台</p>
+      <p class="hero-eyebrow">走近非遗 · 品悟旗韵</p>
       <h1 class="hero-h1">旗<em>韵</em></h1>
-      <p class="hero-tagline">让东方美学进入日常生活</p>
+      <p class="hero-tagline" style="font-size:17px;letter-spacing:4px;color:rgba(255,255,255,.75);margin-bottom:8px;">一袭旗袍，一梦芳华</p>
+      <p class="hero-tagline" style="font-size:12px;letter-spacing:2px;color:rgba(255,255,255,.4);margin-bottom:14px;">AI 新中式穿搭平台 · 让东方美学融入日常</p>
       <p class="hero-desc">上传一张照片，告诉我们你的场景和偏好，AI 帮你找到真正适合自己的新中式穿搭。从灵感到成衣，一站完成。</p>
       <div class="hero-btns">
         <button class="btn-primary" onclick="go('tryon')">开始 AI 试穿</button>
@@ -796,12 +828,12 @@ function swTryon(i,el){
 }
 function runTryon(){
   const f=document.getElementById('tryon-fig');
-  f.style.filter='drop-shadow(0 0 24px rgba(192,48,79,.5))';
+  f.style.filter='drop-shadow(0 0 24px rgba(121,23,28,.5))';
   f.style.transform='scale(1.08)';
   setTimeout(()=>{
     f.textContent=['👘','🥻','👗'][Math.floor(Math.random()*3)];
     f.style.transform='scale(1)';
-    f.style.filter='drop-shadow(0 4px 20px rgba(192,48,79,.2))';
+    f.style.filter='drop-shadow(0 4px 20px rgba(121,23,28,.2))';
     alert('AI试穿效果生成成功！\n推荐尺码：S / 155-160cm\n版型：高立领短袖修身款\n适合场景：毕业典礼 ✓');
   },600);
 }

@@ -22,7 +22,7 @@ button{font-family:inherit;}
   background:rgba(250,248,245,.94);backdrop-filter:blur(16px);
   border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 40px;}
 .logo{display:flex;align-items:center;gap:9px;cursor:pointer;}
-.logo-mark{width:36px;height:36px;flex-shrink:0;}
+.logo-mark{width:36px;height:36px;flex-shrink:0;object-fit:contain;}
 .logo-name{font-size:19px;font-weight:700;letter-spacing:4px;color:var(--red);}
 .nav-links{margin-left:auto;display:flex;list-style:none;}
 .nav-links a{display:block;padding:0 16px;line-height:60px;font-size:13.5px;
@@ -44,8 +44,9 @@ button{font-family:inherit;}
   background:rgba(0,0,0,.14);top:-90px;left:-110px;pointer-events:none;}
 .hero-circle-bg2{position:absolute;width:200px;height:200px;border-radius:50%;
   background:rgba(255,255,255,.04);bottom:60px;right:40px;pointer-events:none;}
-.hero-right{background:#fbece5;display:flex;align-items:center;justify-content:center;
-  position:relative;overflow:hidden;padding:50px;}
+.hero-right{background:url('background.jpg') center top/cover no-repeat;
+  display:flex;align-items:flex-end;justify-content:center;
+  position:relative;overflow:hidden;padding:40px 40px 52px;}
 .hr-bg-dots{position:absolute;inset:0;
   background-image:radial-gradient(circle,rgba(121,23,28,.09) 1px,transparent 1px);
   background-size:26px 26px;pointer-events:none;}
@@ -59,9 +60,10 @@ button{font-family:inherit;}
   top:50%;left:-20px;transform:translateY(-50%);z-index:0;pointer-events:none;}
 .hr-figure{width:200px;height:auto;position:relative;z-index:2;
   filter:drop-shadow(0 16px 40px rgba(26,16,12,.18));}
-.hr-pills{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px;position:relative;z-index:2;}
-.hr-pill{padding:8px 14px;background:rgba(121,23,28,.07);border:1px solid rgba(121,23,28,.16);
-  border-radius:24px;font-size:11.5px;color:var(--text);letter-spacing:.3px;text-align:center;}
+.hr-pills{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;position:relative;z-index:2;}
+.hr-pill{padding:8px 14px;background:rgba(250,248,245,.82);border:1px solid rgba(121,23,28,.18);
+  border-radius:24px;font-size:11.5px;color:var(--text);letter-spacing:.3px;text-align:center;
+  backdrop-filter:blur(8px);}
 .hero-eyebrow{font-size:10px;letter-spacing:6px;color:rgba(255,255,255,.45);margin-bottom:18px;text-transform:uppercase;}
 .hero-h1{font-size:82px;font-weight:700;letter-spacing:16px;color:#fff;margin-bottom:8px;line-height:1;}
 .hero-h1 em{color:var(--gold-l);font-style:normal;}
@@ -346,7 +348,8 @@ button{font-family:inherit;}
   overflow:hidden;cursor:pointer;transition:all .28s;}
 .wc-card:hover{transform:translateY(-5px);box-shadow:0 14px 38px var(--shadow);border-color:var(--gold);}
 .wc-img{height:196px;display:flex;align-items:center;justify-content:center;font-size:66px;
-  position:relative;}
+  position:relative;overflow:hidden;}
+.wc-img img{width:100%;height:100%;object-fit:cover;display:block;}
 .wc-bar{position:absolute;bottom:0;left:0;right:0;height:3px;
   background:linear-gradient(to right,var(--red),var(--gold));}
 .wc-info{padding:13px 15px 15px;}
@@ -388,24 +391,7 @@ button{font-family:inherit;}
 <!-- NAV -->
 <nav class="nav">
   <div class="logo" onclick="go('home')">
-    <svg class="logo-mark" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0" y="0" width="36" height="36" rx="13" fill="#79171C"/>
-      <!-- 左外弧 (C形，向左弓出) -->
-      <path d="M4.5 3.5 C1.2 12 1.2 24 4.5 33" stroke="#F5E4D8" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-      <!-- 左内弧 -->
-      <path d="M10 3 C7 12 7 24 10 33" stroke="#F5E4D8" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-      <!-- 右内弧 (镜像) -->
-      <path d="M26 3 C29 12 29 24 26 33" stroke="#F5E4D8" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-      <!-- 右外弧 (镜像) -->
-      <path d="M31.5 3.5 C34.8 12 34.8 24 31.5 33" stroke="#F5E4D8" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-      <!-- 盘扣: 斜向针杆 -->
-      <line x1="11" y1="11.5" x2="19" y2="3.5" stroke="#F5E4D8" stroke-width="3.8" stroke-linecap="round"/>
-      <!-- 盘扣: 钩环 -->
-      <path d="M11.5 12 C9 13.5 9 17 12.5 16" stroke="#F5E4D8" stroke-width="1.9" fill="none" stroke-linecap="round"/>
-      <!-- 盘扣: 端点圆 -->
-      <circle cx="19.5" cy="3" r="1.4" fill="#F5E4D8"/>
-      <circle cx="13" cy="16.5" r="1.4" fill="#F5E4D8"/>
-    </svg>
+    <img src="logo.png" class="logo-mark" alt="旗韵">
     <span class="logo-name">旗韵</span>
   </div>
   <ul class="nav-links">
@@ -456,62 +442,13 @@ button{font-family:inherit;}
         <div class="hero-brand-text"><small>qi</small>旗&nbsp;&nbsp;&nbsp;<small>yun</small>韵</div>
       </div>
     </div>
-    <!-- 右侧：海报风格视觉区 -->
+    <!-- 右侧：品牌海报背景图 -->
     <div class="hero-right">
-      <div class="hr-bg-dots"></div>
-      <!-- 海报圆形装饰（仿品牌海报分割圆） -->
-      <div class="hr-orb"></div>
-      <div class="hr-orb2"></div>
-      <div class="hr-center">
-        <!-- 旗韵时装插画（简化版） -->
-        <svg class="hr-figure" viewBox="0 0 220 530" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- 发型盘发 -->
-          <ellipse cx="110" cy="46" rx="26" ry="30" fill="#1A100C"/>
-          <!-- 帽子 -->
-          <ellipse cx="122" cy="24" rx="22" ry="11" fill="#5A3E28"/>
-          <rect x="106" y="13" width="28" height="14" rx="7" fill="#5A3E28"/>
-          <!-- 发饰 -->
-          <circle cx="96" cy="19" r="3.5" fill="#F5E4D8"/>
-          <circle cx="103" cy="13" r="2.5" fill="#D8B07C"/>
-          <circle cx="110" cy="9" r="2" fill="#F5E4D8"/>
-          <!-- 颈部 -->
-          <rect x="100" y="74" width="20" height="16" rx="5" fill="#DDAF8C"/>
-          <!-- 旗袍立领 -->
-          <path d="M88 90 C93 81 109 78 110 78 C111 78 127 81 132 90" stroke="#F5E4D8" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-          <!-- 盘扣 -->
-          <circle cx="110" cy="98" r="4.2" fill="none" stroke="#F5E4D8" stroke-width="1.4"/>
-          <circle cx="110" cy="98" r="1.6" fill="#F5E4D8"/>
-          <!-- 左侧身体（旗袍·暗红） -->
-          <path d="M88 90 C82 120 76 200 78 282 C80 342 85 402 92 464 L110 474" fill="#79171C"/>
-          <!-- 右侧身体（现代搭配·卡其暖棕） -->
-          <path d="M132 90 C138 120 144 200 142 282 C140 342 135 402 128 464 L110 474" fill="#8B7A62"/>
-          <!-- 左臂 -->
-          <path d="M82 118 C70 155 64 198 68 232" stroke="#DDAF8C" stroke-width="18" fill="none" stroke-linecap="round"/>
-          <!-- 右臂 -->
-          <path d="M138 118 C150 155 156 198 152 232" stroke="#DDAF8C" stroke-width="18" fill="none" stroke-linecap="round"/>
-          <!-- 左手 -->
-          <ellipse cx="67" cy="234" rx="10" ry="8" fill="#DDAF8C" transform="rotate(-18 67 234)"/>
-          <!-- 手提包 -->
-          <rect x="155" y="230" width="44" height="56" rx="9" fill="#8B5E30"/>
-          <path d="M162 230 C162 218 192 214 192 226" stroke="#6B4420" stroke-width="3" fill="none" stroke-linecap="round"/>
-          <line x1="163" y1="258" x2="195" y2="258" stroke="rgba(107,68,32,.45)" stroke-width="1.5"/>
-          <!-- 腿 -->
-          <path d="M90 470 L84 534" stroke="#DDAF8C" stroke-width="16" fill="none" stroke-linecap="round"/>
-          <path d="M130 470 L136 534" stroke="#DDAF8C" stroke-width="16" fill="none" stroke-linecap="round"/>
-          <!-- 袜子 -->
-          <path d="M83 521 L80 548" stroke="#B4A898" stroke-width="16" fill="none" stroke-linecap="round"/>
-          <path d="M137 521 L140 548" stroke="#B4A898" stroke-width="16" fill="none" stroke-linecap="round"/>
-          <!-- 鞋子 -->
-          <path d="M68 549 L92 554" stroke="#D8D0C2" stroke-width="11" fill="none" stroke-linecap="round"/>
-          <path d="M128 549 L153 554" stroke="#D8D0C2" stroke-width="11" fill="none" stroke-linecap="round"/>
-        </svg>
-        <!-- 功能特色胶囊 -->
-        <div class="hr-pills">
-          <span class="hr-pill">🧵 苏绣非遗 · 工艺护照</span>
-          <span class="hr-pill">🎨 AI 文字驱动设计</span>
-          <span class="hr-pill">👗 上传照片虚拟试穿</span>
-          <span class="hr-pill">📐 精准尺码建议</span>
-        </div>
+      <div class="hr-pills">
+        <span class="hr-pill">🧵 苏绣非遗 · 工艺护照</span>
+        <span class="hr-pill">🎨 AI 文字驱动设计</span>
+        <span class="hr-pill">👗 上传照片虚拟试穿</span>
+        <span class="hr-pill">📐 精准尺码建议</span>
       </div>
     </div>
   </div>
@@ -614,8 +551,8 @@ button{font-family:inherit;}
     </div>
     <div class="wc-grid">
       <div class="wc-card" onclick="alert('旗韵团扇·苏绣联名款\n限量200把 · 苏绣非遗工艺\n圆形绢扇 · 直径38cm\n可加购专属礼盒包装')">
-        <div class="wc-img" style="background:linear-gradient(135deg,#f9ebe3,#f3e8df);">
-          🪭
+        <div class="wc-img">
+          <img src="旗韵团扇.png" alt="旗韵团扇">
           <div class="wc-bar"></div>
         </div>
         <div class="wc-info">
@@ -629,8 +566,8 @@ button{font-family:inherit;}
         </div>
       </div>
       <div class="wc-card" onclick="alert('旗韵宫扇摆件\n品牌云纹图案 · 纯铜支架\n适合陈设展示，送礼首选')">
-        <div class="wc-img" style="background:linear-gradient(135deg,#fdf3e4,#f9ebe3);">
-          🏮
+        <div class="wc-img">
+          <img src="旗韵宫扇摆件.png" alt="旗韵宫扇摆件">
           <div class="wc-bar"></div>
         </div>
         <div class="wc-info">
@@ -644,8 +581,8 @@ button{font-family:inherit;}
         </div>
       </div>
       <div class="wc-card" onclick="alert('云纹真丝丝巾·暗红版\n100%桑蚕丝 · 品牌云纹图案\n90×90cm · 附专属礼袋')">
-        <div class="wc-img" style="background:linear-gradient(135deg,#79171C,#520F12);">
-          <span style="font-size:56px;">🧣</span>
+        <div class="wc-img">
+          <img src="暗红丝巾.png" alt="云纹真丝丝巾暗红版">
           <div class="wc-bar"></div>
         </div>
         <div class="wc-info">
@@ -659,8 +596,8 @@ button{font-family:inherit;}
         </div>
       </div>
       <div class="wc-card" onclick="alert('云纹真丝丝巾·浅粉版\n100%桑蚕丝 · 淡青红底色\n品牌云纹图案 · 附专属礼袋')">
-        <div class="wc-img" style="background:linear-gradient(135deg,#fbece5,#f9ebe3);">
-          <span style="font-size:56px;">🧣</span>
+        <div class="wc-img">
+          <img src="浅粉丝巾.png" alt="云纹真丝丝巾浅粉版">
           <div class="wc-bar"></div>
         </div>
         <div class="wc-info">
@@ -1119,10 +1056,10 @@ const SCENE_DB = {
   ],
   '配饰':[
     {e:'💍',bg:'linear-gradient(135deg,#ffd5f5,#d5d5ff)',name:'旗袍盘扣银耳环套装',shop:'银花国风饰品',tags:[['scene','旗袍必备'],['fabric','925银·手工']],price:'¥198',bc:'pb-gray',badge:'爆款',pp:null},
-    {e:'🪭',bg:'linear-gradient(135deg,#f9ebe3,#f3e8df)',name:'旗韵团扇·苏绣联名款',shop:'旗韵文创官方',tags:[['scene','文创/礼品'],['fabric','苏绣工艺'],['service','限量200把']],price:'¥368',bc:'pb-r',badge:'限量版',pp:null},
-    {e:'🧣',bg:'linear-gradient(135deg,#79171C,#520F12)',name:'云纹真丝丝巾·暗红版',shop:'旗韵文创官方',tags:[['scene','搭配/礼品'],['fabric','100%桑蚕丝'],['service','礼盒包装']],price:'¥298',bc:'pb-r',badge:'新品',pp:null},
-    {e:'🧣',bg:'linear-gradient(135deg,#fbece5,#f9ebe3)',name:'云纹真丝丝巾·浅粉版',shop:'旗韵文创官方',tags:[['scene','搭配/礼品'],['fabric','100%桑蚕丝'],['service','礼盒包装']],price:'¥298',bc:'pb-gray',badge:'经典款',pp:null},
-    {e:'🏮',bg:'linear-gradient(135deg,#fdf3e4,#f9ebe3)',name:'旗韵宫扇摆件·品牌联名',shop:'旗韵文创官方',tags:[['scene','文创/礼品'],['fabric','纯铜支架'],['service','礼盒装']],price:'¥528',bc:'pb-g',badge:'礼品推荐',pp:null},
+    {img:'旗韵团扇.png',name:'旗韵团扇·苏绣联名款',shop:'旗韵文创官方',tags:[['scene','文创/礼品'],['fabric','苏绣工艺'],['service','限量200把']],price:'¥368',bc:'pb-r',badge:'限量版',pp:null},
+    {img:'暗红丝巾.png',name:'云纹真丝丝巾·暗红版',shop:'旗韵文创官方',tags:[['scene','搭配/礼品'],['fabric','100%桑蚕丝'],['service','礼盒包装']],price:'¥298',bc:'pb-r',badge:'新品',pp:null},
+    {img:'浅粉丝巾.png',name:'云纹真丝丝巾·浅粉版',shop:'旗韵文创官方',tags:[['scene','搭配/礼品'],['fabric','100%桑蚕丝'],['service','礼盒包装']],price:'¥298',bc:'pb-gray',badge:'经典款',pp:null},
+    {img:'旗韵宫扇摆件.png',name:'旗韵宫扇摆件·品牌联名',shop:'旗韵文创官方',tags:[['scene','文创/礼品'],['fabric','纯铜支架'],['service','礼盒装']],price:'¥528',bc:'pb-g',badge:'礼品推荐',pp:null},
     {e:'📿',bg:'linear-gradient(135deg,#ffd5f5,#d5f5f5)',name:'翡翠琉璃旗袍配珠串',shop:'古意珠宝坊',tags:[['scene','旗袍搭配'],['fabric','天然翡翠']],price:'¥486',bc:'pb-g',badge:'搭配推荐',pp:null},
     {e:'🎁',bg:'linear-gradient(135deg,#d5f0ff,#f0d5ff)',name:'旗袍文化手账礼盒',shop:'旗韵文创官方',tags:[['scene','伴手礼/自用'],['service','含工艺科普手册']],price:'¥128',bc:'pb-gray',badge:'文创',pp:null},
     {e:'💄',bg:'linear-gradient(135deg,#ffd5e8,#f5d5f5)',name:'国风妆容配色礼盒',shop:'花西子·国潮彩妆',tags:[['scene','旗袍妆容'],['service','礼盒装']],price:'¥688',bc:'pb-g',badge:'搭配推荐',pp:null},
@@ -1131,8 +1068,11 @@ const SCENE_DB = {
 function prodCard(p){
   const tags=p.tags.map(t=>`<span class="mtag mt-${t[0]}">${t[1]}</span>`).join('');
   const pp=p.pp?`<span class="passport-link" onclick="event.stopPropagation();alert('工艺护照\\n${p.pp}')">📜 工艺护照</span>`:'';
+  const thumb=p.img
+    ?`<img src="${p.img}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;display:block;">`
+    :`${p.e||'👘'}`;
   return `<div class="prod" onclick="go('tryon')">
-    <div class="prod-img" style="background:${p.bg}">${p.e}
+    <div class="prod-img" style="${p.img?'':'background:'+p.bg}">${thumb}
       <div class="prod-overlay">一键 AI 试穿</div>
       <div class="prod-badge ${p.bc}">${p.badge}</div>
     </div>

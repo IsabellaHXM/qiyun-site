@@ -51,7 +51,15 @@ button{font-family:inherit;}
   background-size:26px 26px;pointer-events:none;}
 .hr-center{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:20px;}
 .hr-motif{width:288px;height:288px;opacity:.62;}
-.hr-pills{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px;}
+/* Hero poster circle orb + fashion figure */
+.hr-orb{position:absolute;width:390px;height:390px;border-radius:50%;background:#79171C;
+  top:50%;left:-70px;transform:translateY(-50%);z-index:0;pointer-events:none;}
+.hr-orb2{position:absolute;width:290px;height:290px;border-radius:50%;
+  border:1px solid rgba(121,23,28,.22);background:transparent;
+  top:50%;left:-20px;transform:translateY(-50%);z-index:0;pointer-events:none;}
+.hr-figure{width:200px;height:auto;position:relative;z-index:2;
+  filter:drop-shadow(0 16px 40px rgba(26,16,12,.18));}
+.hr-pills{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px;position:relative;z-index:2;}
 .hr-pill{padding:8px 14px;background:rgba(121,23,28,.07);border:1px solid rgba(121,23,28,.16);
   border-radius:24px;font-size:11.5px;color:var(--text);letter-spacing:.3px;text-align:center;}
 .hero-eyebrow{font-size:10px;letter-spacing:6px;color:rgba(255,255,255,.45);margin-bottom:18px;text-transform:uppercase;}
@@ -381,15 +389,17 @@ button{font-family:inherit;}
 <nav class="nav">
   <div class="logo" onclick="go('home')">
     <svg class="logo-mark" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-      <rect x="1" y="1" width="34" height="34" rx="8" fill="#79171C"/>
-      <path d="M13 7 C7.5 13 6.5 21 10 30" stroke="white" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-      <path d="M23 7 C28.5 13 29.5 21 26 30" stroke="white" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-      <line x1="15.5" y1="5" x2="20.5" y2="9.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
-      <line x1="20.5" y1="5" x2="15.5" y2="9.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
-      <circle cx="15.5" cy="4.7" r="1.5" fill="white"/>
-      <circle cx="20.5" cy="4.7" r="1.5" fill="white"/>
-      <circle cx="15.5" cy="9.8" r="1.5" fill="white"/>
-      <circle cx="20.5" cy="9.8" r="1.5" fill="white"/>
+      <rect x="0" y="0" width="36" height="36" rx="10" fill="#79171C"/>
+      <path d="M15 12 Q7 22 9 34" stroke="#F5E4D8" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <path d="M17.5 11 Q11 22 13.5 34" stroke="#F5E4D8" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <path d="M18.5 11 Q25 22 22.5 34" stroke="#F5E4D8" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <path d="M21 12 Q29 22 27 34" stroke="#F5E4D8" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <line x1="14.5" y1="5.8" x2="19.5" y2="10.2" stroke="#F5E4D8" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="19.5" y1="5.8" x2="14.5" y2="10.2" stroke="#F5E4D8" stroke-width="1.7" stroke-linecap="round"/>
+      <circle cx="14.5" cy="5.5" r="1.35" fill="#F5E4D8"/>
+      <circle cx="19.5" cy="5.5" r="1.35" fill="#F5E4D8"/>
+      <circle cx="14.5" cy="10.5" r="1.35" fill="#F5E4D8"/>
+      <circle cx="19.5" cy="10.5" r="1.35" fill="#F5E4D8"/>
     </svg>
     <span class="logo-name">旗韵</span>
   </div>
@@ -428,41 +438,69 @@ button{font-family:inherit;}
       <!-- 品牌标识（仿海报左下角排版） -->
       <div class="hero-brand-foot">
         <svg width="28" height="28" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1" y="1" width="34" height="34" rx="7" fill="rgba(255,255,255,.15)"/>
-          <path d="M13 7 C7.5 13 6.5 21 10 30" stroke="white" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-          <path d="M23 7 C28.5 13 29.5 21 26 30" stroke="white" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-          <line x1="15.5" y1="5" x2="20.5" y2="9.5" stroke="white" stroke-width="1.7" stroke-linecap="round"/>
-          <line x1="20.5" y1="5" x2="15.5" y2="9.5" stroke="white" stroke-width="1.7" stroke-linecap="round"/>
-          <circle cx="15.5" cy="4.7" r="1.4" fill="white"/>
-          <circle cx="20.5" cy="4.7" r="1.4" fill="white"/>
-          <circle cx="15.5" cy="9.8" r="1.4" fill="white"/>
-          <circle cx="20.5" cy="9.8" r="1.4" fill="white"/>
+          <rect x="0" y="0" width="36" height="36" rx="10" fill="rgba(255,255,255,.14)"/>
+          <path d="M15 12 Q7 22 9 34" stroke="rgba(255,255,255,.85)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M17.5 11 Q11 22 13.5 34" stroke="rgba(255,255,255,.85)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M18.5 11 Q25 22 22.5 34" stroke="rgba(255,255,255,.85)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M21 12 Q29 22 27 34" stroke="rgba(255,255,255,.85)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <line x1="14.5" y1="5.8" x2="19.5" y2="10.2" stroke="rgba(255,255,255,.85)" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="19.5" y1="5.8" x2="14.5" y2="10.2" stroke="rgba(255,255,255,.85)" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="14.5" cy="5.5" r="1.3" fill="rgba(255,255,255,.85)"/>
+          <circle cx="19.5" cy="5.5" r="1.3" fill="rgba(255,255,255,.85)"/>
+          <circle cx="14.5" cy="10.5" r="1.3" fill="rgba(255,255,255,.85)"/>
+          <circle cx="19.5" cy="10.5" r="1.3" fill="rgba(255,255,255,.85)"/>
         </svg>
         <div class="hero-brand-text"><small>qi</small>旗&nbsp;&nbsp;&nbsp;<small>yun</small>韵</div>
       </div>
     </div>
-    <!-- 右侧：淡青红视觉区（品牌 VI 延展图形） -->
+    <!-- 右侧：海报风格视觉区 -->
     <div class="hero-right">
       <div class="hr-bg-dots"></div>
+      <!-- 海报圆形装饰（仿品牌海报分割圆） -->
+      <div class="hr-orb"></div>
+      <div class="hr-orb2"></div>
       <div class="hr-center">
-        <!-- 品牌延展图形：四圆云纹 + 盘扣丝线 -->
-        <svg class="hr-motif" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="150" cy="88" r="78" stroke="#79171C" stroke-width="1.5"/>
-          <circle cx="88" cy="150" r="78" stroke="#79171C" stroke-width="1.5"/>
-          <circle cx="212" cy="150" r="78" stroke="#79171C" stroke-width="1.5"/>
-          <circle cx="150" cy="212" r="78" stroke="#79171C" stroke-width="1.5"/>
-          <circle cx="150" cy="150" r="138" stroke="#79171C" stroke-width=".8" stroke-dasharray="5 9" opacity=".28"/>
-          <path d="M110 110 C130 140 170 160 190 190" stroke="#79171C" stroke-width="3" stroke-linecap="round"/>
-          <circle cx="110" cy="110" r="6" fill="#79171C"/>
-          <circle cx="190" cy="190" r="6" fill="#79171C"/>
-          <line x1="103" y1="102" x2="109" y2="108" stroke="#79171C" stroke-width="2" stroke-linecap="round"/>
-          <line x1="109" y1="102" x2="103" y2="108" stroke="#79171C" stroke-width="2" stroke-linecap="round"/>
-          <circle cx="103" cy="101" r="2.6" fill="#79171C"/>
-          <circle cx="110" cy="101" r="2.6" fill="#79171C"/>
-          <line x1="190" y1="196" x2="197" y2="190" stroke="#79171C" stroke-width="2" stroke-linecap="round"/>
-          <line x1="197" y1="196" x2="190" y2="190" stroke="#79171C" stroke-width="2" stroke-linecap="round"/>
-          <circle cx="190" cy="198" r="2.6" fill="#79171C"/>
-          <circle cx="197" cy="198" r="2.6" fill="#79171C"/>
+        <!-- 旗韵时装插画（简化版） -->
+        <svg class="hr-figure" viewBox="0 0 220 530" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- 发型盘发 -->
+          <ellipse cx="110" cy="46" rx="26" ry="30" fill="#1A100C"/>
+          <!-- 帽子 -->
+          <ellipse cx="122" cy="24" rx="22" ry="11" fill="#5A3E28"/>
+          <rect x="106" y="13" width="28" height="14" rx="7" fill="#5A3E28"/>
+          <!-- 发饰 -->
+          <circle cx="96" cy="19" r="3.5" fill="#F5E4D8"/>
+          <circle cx="103" cy="13" r="2.5" fill="#D8B07C"/>
+          <circle cx="110" cy="9" r="2" fill="#F5E4D8"/>
+          <!-- 颈部 -->
+          <rect x="100" y="74" width="20" height="16" rx="5" fill="#DDAF8C"/>
+          <!-- 旗袍立领 -->
+          <path d="M88 90 C93 81 109 78 110 78 C111 78 127 81 132 90" stroke="#F5E4D8" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          <!-- 盘扣 -->
+          <circle cx="110" cy="98" r="4.2" fill="none" stroke="#F5E4D8" stroke-width="1.4"/>
+          <circle cx="110" cy="98" r="1.6" fill="#F5E4D8"/>
+          <!-- 左侧身体（旗袍·暗红） -->
+          <path d="M88 90 C82 120 76 200 78 282 C80 342 85 402 92 464 L110 474" fill="#79171C"/>
+          <!-- 右侧身体（现代搭配·卡其暖棕） -->
+          <path d="M132 90 C138 120 144 200 142 282 C140 342 135 402 128 464 L110 474" fill="#8B7A62"/>
+          <!-- 左臂 -->
+          <path d="M82 118 C70 155 64 198 68 232" stroke="#DDAF8C" stroke-width="18" fill="none" stroke-linecap="round"/>
+          <!-- 右臂 -->
+          <path d="M138 118 C150 155 156 198 152 232" stroke="#DDAF8C" stroke-width="18" fill="none" stroke-linecap="round"/>
+          <!-- 左手 -->
+          <ellipse cx="67" cy="234" rx="10" ry="8" fill="#DDAF8C" transform="rotate(-18 67 234)"/>
+          <!-- 手提包 -->
+          <rect x="155" y="230" width="44" height="56" rx="9" fill="#8B5E30"/>
+          <path d="M162 230 C162 218 192 214 192 226" stroke="#6B4420" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <line x1="163" y1="258" x2="195" y2="258" stroke="rgba(107,68,32,.45)" stroke-width="1.5"/>
+          <!-- 腿 -->
+          <path d="M90 470 L84 534" stroke="#DDAF8C" stroke-width="16" fill="none" stroke-linecap="round"/>
+          <path d="M130 470 L136 534" stroke="#DDAF8C" stroke-width="16" fill="none" stroke-linecap="round"/>
+          <!-- 袜子 -->
+          <path d="M83 521 L80 548" stroke="#B4A898" stroke-width="16" fill="none" stroke-linecap="round"/>
+          <path d="M137 521 L140 548" stroke="#B4A898" stroke-width="16" fill="none" stroke-linecap="round"/>
+          <!-- 鞋子 -->
+          <path d="M68 549 L92 554" stroke="#D8D0C2" stroke-width="11" fill="none" stroke-linecap="round"/>
+          <path d="M128 549 L153 554" stroke="#D8D0C2" stroke-width="11" fill="none" stroke-linecap="round"/>
         </svg>
         <!-- 功能特色胶囊 -->
         <div class="hr-pills">
@@ -503,11 +541,63 @@ button{font-family:inherit;}
       <p class="sec-desc">AI 试穿决策 · 新中式严选商城 · 用户共创设计 · 非遗工艺内容 · 数字衣橱管理</p>
     </div>
     <div class="feat-grid">
-      <div class="feat-card" onclick="go('tryon')"><div class="feat-ico">🪞</div><div class="feat-name">AI 试衣间</div><div class="feat-desc">上传照片 · 智能试穿 · 尺码建议</div></div>
-      <div class="feat-card" onclick="go('mall')"><div class="feat-ico">🛍️</div><div class="feat-name">新中式商城</div><div class="feat-desc">场景选款 · 严选品牌 · 半定制服务</div></div>
-      <div class="feat-card" onclick="go('workshop')"><div class="feat-ico">✨</div><div class="feat-name">AI 共创工坊</div><div class="feat-desc">文字生成设计 · 纹样共创 · 限量打样</div></div>
-      <div class="feat-card" onclick="go('community')"><div class="feat-ico">💬</div><div class="feat-name">灵感社区</div><div class="feat-desc">穿搭笔记 · 同款试穿 · 共创投票</div></div>
-      <div class="feat-card" onclick="go('wardrobe')"><div class="feat-ico">👗</div><div class="feat-name">数字衣橱</div><div class="feat-desc">身材档案 · 试穿记录 · 工艺护照</div></div>
+      <div class="feat-card" onclick="go('tryon')">
+        <div class="feat-ico">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 8 C14 12 12 18 13 28 L12 42 L36 42 L35 28 C36 18 34 12 30 8" stroke="#79171C" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19 8 L19 12 L29 12 L29 8" stroke="#79171C" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 22 C21 19 27 19 28 22" stroke="#D8B07C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <circle cx="24" cy="24" r="1.8" fill="#D8B07C"/>
+          </svg>
+        </div>
+        <div class="feat-name">AI 试衣间</div><div class="feat-desc">上传照片 · 智能试穿 · 尺码建议</div>
+      </div>
+      <div class="feat-card" onclick="go('mall')">
+        <div class="feat-ico">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 18 L35 18 L33 40 L15 40 Z" stroke="#79171C" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M18 18 C18 10 30 10 30 18" stroke="#79171C" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <line x1="20" y1="27" x2="28" y2="27" stroke="#D8B07C" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="24" y1="23" x2="24" y2="31" stroke="#D8B07C" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="feat-name">新中式商城</div><div class="feat-desc">场景选款 · 严选品牌 · 半定制服务</div>
+      </div>
+      <div class="feat-card" onclick="go('workshop')">
+        <div class="feat-ico">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M34 8 L40 14 L18 36 L10 38 L12 30 Z" stroke="#79171C" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M28 14 L34 20" stroke="#79171C" stroke-width="2" stroke-linecap="round"/>
+            <line x1="8" y1="17" x2="8" y2="11" stroke="#D8B07C" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="5" y1="14" x2="11" y2="14" stroke="#D8B07C" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="38" y1="30" x2="38" y2="26" stroke="#D8B07C" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="36" y1="28" x2="40" y2="28" stroke="#D8B07C" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="feat-name">AI 共创工坊</div><div class="feat-desc">文字生成设计 · 纹样共创 · 限量打样</div>
+      </div>
+      <div class="feat-card" onclick="go('community')">
+        <div class="feat-ico">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 12 C8 9 10 7 13 7 L35 7 C38 7 40 9 40 12 L40 26 C40 29 38 31 35 31 L26 31 L16 40 L16 31 C10 31 8 29 8 26 Z" stroke="#79171C" stroke-width="2" stroke-linejoin="round"/>
+            <circle cx="18" cy="19" r="2" fill="#79171C"/>
+            <circle cx="24" cy="19" r="2" fill="#79171C"/>
+            <circle cx="30" cy="19" r="2" fill="#79171C"/>
+          </svg>
+        </div>
+        <div class="feat-name">灵感社区</div><div class="feat-desc">穿搭笔记 · 同款试穿 · 共创投票</div>
+      </div>
+      <div class="feat-card" onclick="go('wardrobe')">
+        <div class="feat-ico">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 6 C24 6 28 9 25 13 C23.5 14 22 13.5 22 13.5" stroke="#79171C" stroke-width="2" stroke-linecap="round"/>
+            <path d="M9 38 C9 38 16 26 24 13 C32 26 39 38 39 38 L9 38 Z" stroke="#79171C" stroke-width="2" fill="none" stroke-linejoin="round"/>
+            <line x1="9" y1="42" x2="39" y2="42" stroke="#79171C" stroke-width="2" stroke-linecap="round"/>
+            <line x1="19" y1="30" x2="29" y2="30" stroke="#D8B07C" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="feat-name">数字衣橱</div><div class="feat-desc">身材档案 · 试穿记录 · 工艺护照</div>
+      </div>
     </div>
   </div>
 
@@ -668,26 +758,17 @@ button{font-family:inherit;}
     <p class="sec-desc">按场景选款 · 按身材推荐 · 从试穿到购买一步完成</p>
   </div>
   <div class="scene-cats">
-    <div class="scat on" onclick="setScat(this)">💼 通勤新中式</div>
-    <div class="scat" onclick="setScat(this)">🎓 毕业 / 典礼</div>
-    <div class="scat" onclick="setScat(this)">💒 婚礼 / 宴会</div>
-    <div class="scat" onclick="setScat(this)">📸 旅行拍照</div>
-    <div class="scat" onclick="setScat(this)">👘 日常改良旗袍</div>
-    <div class="scat" onclick="setScat(this)">🌸 小个子专区</div>
-    <div class="scat" onclick="setScat(this)">✨ 微胖友好</div>
-    <div class="scat" onclick="setScat(this)">🌿 妈妈辈优雅款</div>
-    <div class="scat" onclick="setScat(this)">💎 配饰与文创</div>
+    <div class="scat on" data-key="通勤" onclick="setScat(this)">💼 通勤新中式</div>
+    <div class="scat" data-key="毕业" onclick="setScat(this)">🎓 毕业 / 典礼</div>
+    <div class="scat" data-key="婚礼" onclick="setScat(this)">💒 婚礼 / 宴会</div>
+    <div class="scat" data-key="旅行" onclick="setScat(this)">📸 旅行拍照</div>
+    <div class="scat" data-key="日常" onclick="setScat(this)">👘 日常改良旗袍</div>
+    <div class="scat" data-key="小个子" onclick="setScat(this)">🌸 小个子专区</div>
+    <div class="scat" data-key="微胖" onclick="setScat(this)">✨ 微胖友好</div>
+    <div class="scat" data-key="妈妈" onclick="setScat(this)">🌿 妈妈辈优雅款</div>
+    <div class="scat" data-key="配饰" onclick="setScat(this)">💎 配饰与文创</div>
   </div>
-  <div class="prod-grid">
-    <div class="prod"><div class="prod-img">👘<div class="prod-overlay">一键 AI 试穿</div><div class="prod-badge pb-r">非遗认证</div></div><div class="prod-info"><div class="prod-name">苏绣云纹正红旗袍</div><div class="prod-shop">苏韵阁 · 非遗旗袍旗舰店</div><div class="meta-tags"><span class="mtag mt-scene">典礼 / 宴会</span><span class="mtag mt-fit">标准身材</span><span class="mtag mt-fabric">苏绣真丝</span><span class="mtag mt-service">可半定制</span></div><div class="prod-foot"><div class="prod-price">¥3,880</div><span class="passport-link" onclick="alert('工艺护照\n面料：苏州真丝\n纹样：云纹牡丹·富贵长寿\n制作人：王月华·苏绣非遗传承人\n工时：约220小时\n护理：专业干洗')">📜 工艺护照</span></div></div></div>
-    <div class="prod"><div class="prod-img" style="background:linear-gradient(135deg,#e8d5f5,#d5e8f5);">👘<div class="prod-overlay">一键 AI 试穿</div><div class="prod-badge pb-r">非遗认证</div></div><div class="prod-info"><div class="prod-name">云锦刺绣翠绿旗袍</div><div class="prod-shop">金陵云锦 · 南京传承馆</div><div class="meta-tags"><span class="mtag mt-scene">宴会 / 展览</span><span class="mtag mt-fit">高个子优选</span><span class="mtag mt-fabric">南京云锦</span><span class="mtag mt-service">可改衣</span></div><div class="prod-foot"><div class="prod-price">¥5,260</div><span class="passport-link" onclick="alert('工艺护照\n面料：南京云锦·丝金交织\n纹样：缠枝莲花·国家级非遗\n制作人：赵敏国·云锦织造传承人\n护理：常温平铺存放')">📜 工艺护照</span></div></div></div>
-    <div class="prod"><div class="prod-img" style="background:linear-gradient(135deg,#f5d5d5,#f5e8d5);">👗<div class="prod-overlay">一键 AI 试穿</div><div class="prod-badge pb-g">国潮大牌</div></div><div class="prod-info"><div class="prod-name">新中式印花修身旗袍</div><div class="prod-shop">素言 · 国潮旗袍</div><div class="meta-tags"><span class="mtag mt-scene">通勤 / 日常</span><span class="mtag mt-fit">小个子友好</span><span class="mtag mt-fabric">改良棉麻</span><span class="mtag mt-service">可试穿</span></div><div class="prod-foot"><div class="prod-price">¥1,280</div></div></div></div>
-    <div class="prod"><div class="prod-img" style="background:linear-gradient(135deg,#d5f5d5,#d5d5f5);">👘<div class="prod-overlay">一键 AI 试穿</div><div class="prod-badge pb-g">国潮大牌</div></div><div class="prod-info"><div class="prod-name">改良香云纱旗袍裙</div><div class="prod-shop">汉尚华莲 · 国风旗舰</div><div class="meta-tags"><span class="mtag mt-scene">毕业 / 旅行</span><span class="mtag mt-fit">梨形友好</span><span class="mtag mt-fabric">香云纱</span><span class="mtag mt-service">可半定制</span></div><div class="prod-foot"><div class="prod-price">¥2,160</div><span class="passport-link" onclick="alert('工艺护照\n面料：岭南香云纱·天然植物染色\n产地：广东顺德\n特点：防晒透气·越穿越柔软\n护理：手洗阴干')">📜 工艺护照</span></div></div></div>
-    <div class="prod"><div class="prod-img" style="background:linear-gradient(135deg,#f5f5d5,#d5f5f5);">👘<div class="prod-overlay">一键 AI 试穿</div><div class="prod-badge pb-gray">设计师款</div></div><div class="prod-info"><div class="prod-name">解构主义新中式旗袍</div><div class="prod-shop">墨染设计工作室</div><div class="meta-tags"><span class="mtag mt-scene">展览 / 艺术</span><span class="mtag mt-fit">微胖友好</span><span class="mtag mt-service">限量50件</span></div><div class="prod-foot"><div class="prod-price">¥680</div></div></div></div>
-    <div class="prod"><div class="prod-img" style="background:linear-gradient(135deg,#fff0d5,#ffd5e8);">👗<div class="prod-overlay">一键 AI 试穿</div><div class="prod-badge pb-gray">设计师款</div></div><div class="prod-info"><div class="prod-name">浅色玉兰短旗袍</div><div class="prod-shop">云间织造 · 原创品牌</div><div class="meta-tags"><span class="mtag mt-scene">毕业 / 日常</span><span class="mtag mt-fit">小个子优先</span><span class="mtag mt-fabric">真丝电力纺</span></div><div class="prod-foot"><div class="prod-price">¥980</div></div></div></div>
-    <div class="prod"><div class="prod-img" style="background:linear-gradient(135deg,#ffd5f5,#d5d5ff);">💍<div class="prod-overlay">查看搭配</div></div><div class="prod-info"><div class="prod-name">旗袍盘扣银耳环套装</div><div class="prod-shop">银花国风饰品</div><div class="meta-tags"><span class="mtag mt-scene">旗袍必备配饰</span><span class="mtag mt-fabric">925银·手工</span></div><div class="prod-foot"><div class="prod-price">¥198</div></div></div></div>
-    <div class="prod"><div class="prod-img" style="background:linear-gradient(135deg,#d5f0ff,#f0d5ff);">🎁<div class="prod-overlay">查看详情</div></div><div class="prod-info"><div class="prod-name">旗袍文化手账礼盒</div><div class="prod-shop">旗韵文创官方</div><div class="meta-tags"><span class="mtag mt-scene">伴手礼 / 自用</span><span class="mtag mt-service">含工艺科普手册</span></div><div class="prod-foot"><div class="prod-price">¥128</div></div></div></div>
-  </div>
+  <div class="prod-grid" id="prod-grid"></div>
 </div>
 
 <!-- AI 共创工坊 -->
@@ -974,9 +1055,100 @@ function runTryon(){
     alert('AI试穿效果生成成功！\n推荐尺码：S / 155-160cm\n版型：高立领短袖修身款\n适合场景：毕业典礼 ✓');
   },600);
 }
+/* ====== 商城场景商品数据 ====== */
+const SCENE_DB = {
+  '通勤':[
+    {e:'👗',bg:'linear-gradient(135deg,#f5d5d5,#f5e8d5)',name:'新中式印花修身旗袍',shop:'素言·国潮旗袍',tags:[['scene','通勤/日常'],['fit','小个子友好'],['fabric','改良棉麻'],['service','可试穿']],price:'¥1,280',bc:'pb-g',badge:'国潮大牌',pp:null},
+    {e:'👘',bg:'linear-gradient(135deg,#f5e8d5,#fdf4e4)',name:'香云纱改良旗袍·通勤款',shop:'汉尚华莲·国风旗舰',tags:[['scene','通勤/日常'],['fit','梨形友好'],['fabric','香云纱'],['service','可半定制']],price:'¥2,160',bc:'pb-g',badge:'经典款',pp:'面料：广东顺德香云纱\n特性：防晒透气·越穿越软\n护理：手洗阴干'},
+    {e:'👗',bg:'linear-gradient(135deg,#d5e8f5,#e8d5f5)',name:'通勤中式盘扣上衣+裙',shop:'墨染设计工作室',tags:[['scene','通勤/日常'],['fit','标准身材'],['fabric','棉麻混纺'],['service','可改衣']],price:'¥860',bc:'pb-gray',badge:'设计师款',pp:null},
+    {e:'👗',bg:'linear-gradient(135deg,#e8f5d5,#f5f5d5)',name:'素雅亚麻新中式连衣裙',shop:'云间织造·原创品牌',tags:[['scene','通勤/日常'],['fit','微胖友好'],['fabric','亚麻'],['service','可试穿']],price:'¥680',bc:'pb-gray',badge:'设计师款',pp:null},
+    {e:'💼',bg:'linear-gradient(135deg,#f5d5f5,#d5d5f5)',name:'旗韵品牌真皮通勤包',shop:'旗韵配件官方',tags:[['scene','通勤必备'],['fabric','头层牛皮'],['service','一年质保']],price:'¥588',bc:'pb-g',badge:'搭配推荐',pp:null},
+    {e:'👠',bg:'linear-gradient(135deg,#fdf4e4,#f5f5d5)',name:'中式盘扣低跟通勤鞋',shop:'古意制鞋·手工坊',tags:[['scene','通勤/日常'],['fabric','真皮'],['service','可定制']],price:'¥428',bc:'pb-gray',badge:'搭配推荐',pp:null},
+  ],
+  '毕业':[
+    {e:'👘',bg:'linear-gradient(135deg,#f7e6ec,#fdf4e4)',name:'苏绣云纹正红旗袍',shop:'苏韵阁·非遗旗袍旗舰',tags:[['scene','典礼/宴会'],['fit','标准身材'],['fabric','苏绣真丝'],['service','可半定制']],price:'¥3,880',bc:'pb-r',badge:'非遗认证',pp:'面料：苏州真丝\n纹样：云纹牡丹·富贵长寿\n制作人：王月华·非遗传承人\n工时：约220小时\n护理：专业干洗'},
+    {e:'👗',bg:'linear-gradient(135deg,#fff0d5,#ffd5e8)',name:'浅色玉兰短旗袍',shop:'云间织造·原创品牌',tags:[['scene','毕业/拍照'],['fit','小个子优先'],['fabric','真丝电力纺'],['service','可试穿']],price:'¥980',bc:'pb-gray',badge:'设计师款',pp:null},
+    {e:'👘',bg:'linear-gradient(135deg,#d5f5d5,#d5d5f5)',name:'改良香云纱旗袍裙',shop:'汉尚华莲·国风旗舰',tags:[['scene','毕业/旅行'],['fit','梨形友好'],['fabric','香云纱'],['service','可半定制']],price:'¥2,160',bc:'pb-g',badge:'国潮大牌',pp:'面料：岭南香云纱\n产地：广东顺德\n特点：防晒透气'},
+    {e:'👗',bg:'linear-gradient(135deg,#e8d5f5,#d5e8f5)',name:'水墨青色改良旗袍',shop:'素言·国潮旗袍',tags:[['scene','毕业/展览'],['fit','高个子优选'],['fabric','棉麻'],['service','可改衣']],price:'¥1,580',bc:'pb-g',badge:'国潮大牌',pp:null},
+    {e:'💍',bg:'linear-gradient(135deg,#ffd5f5,#d5d5ff)',name:'旗袍盘扣银耳环套装',shop:'银花国风饰品',tags:[['scene','毕业必备配饰'],['fabric','925银·手工']],price:'¥198',bc:'pb-gray',badge:'搭配推荐',pp:null},
+    {e:'👜',bg:'linear-gradient(135deg,#f5f5d5,#d5f5f5)',name:'珍珠链条晚宴小包',shop:'古意珠宝坊',tags:[['scene','典礼/拍照'],['fabric','珍珠+链条'],['service','礼盒包装']],price:'¥368',bc:'pb-g',badge:'搭配推荐',pp:null},
+  ],
+  '婚礼':[
+    {e:'👘',bg:'linear-gradient(135deg,#e8d5f5,#d5e8f5)',name:'云锦刺绣翠绿旗袍',shop:'金陵云锦·南京传承馆',tags:[['scene','宴会/展览'],['fit','高个子优选'],['fabric','南京云锦'],['service','可改衣']],price:'¥5,260',bc:'pb-r',badge:'非遗认证',pp:'面料：南京云锦·丝金交织\n纹样：缠枝莲花·国家级非遗\n制作人：赵敏国·传承人\n护理：常温平铺存放'},
+    {e:'👘',bg:'linear-gradient(135deg,#f7e6ec,#fdf4e4)',name:'苏绣云纹正红旗袍',shop:'苏韵阁·非遗旗袍旗舰',tags:[['scene','婚礼/宴会'],['fit','标准身材'],['fabric','苏绣真丝'],['service','可半定制']],price:'¥3,880',bc:'pb-r',badge:'非遗认证',pp:'面料：苏州真丝\n纹样：龙凤呈祥\n工时：约220小时'},
+    {e:'👗',bg:'linear-gradient(135deg,#fdf3e4,#f9ebe3)',name:'金色盘金绣旗袍',shop:'景泰蓝旗袍定制坊',tags:[['scene','婚礼/宴会'],['fabric','真丝+盘金绣'],['service','一对一定制']],price:'¥6,800',bc:'pb-r',badge:'顶级定制',pp:'面料：苏州真丝\n工艺：盘金绣·纯手工\n交期：45工作日'},
+    {e:'💄',bg:'linear-gradient(135deg,#ffd5e8,#f5d5f5)',name:'国风妆容配色礼盒',shop:'花西子·国潮彩妆',tags:[['scene','婚礼/宴会'],['service','礼盒装·显档次']],price:'¥688',bc:'pb-g',badge:'搭配推荐',pp:null},
+    {e:'💍',bg:'linear-gradient(135deg,#ffd5f5,#d5d5ff)',name:'苏绣花卉发簪套装',shop:'银花国风饰品',tags:[['scene','婚礼必备发饰'],['fabric','925银·珐琅彩']],price:'¥328',bc:'pb-g',badge:'搭配推荐',pp:null},
+    {e:'👡',bg:'linear-gradient(135deg,#fff0d5,#ffd5e8)',name:'国风绣花高跟鞋',shop:'古意制鞋·手工坊',tags:[['scene','婚礼/宴会'],['fabric','真丝绸缎'],['service','可定制颜色']],price:'¥780',bc:'pb-gray',badge:'搭配推荐',pp:null},
+  ],
+  '旅行':[
+    {e:'👗',bg:'linear-gradient(135deg,#d5f5d5,#d5d5f5)',name:'清新浅色亚麻旗袍裙',shop:'素言·国潮旗袍',tags:[['scene','旅行/拍照'],['fit','小个子友好'],['fabric','亚麻'],['service','可试穿']],price:'¥780',bc:'pb-g',badge:'出行推荐',pp:null},
+    {e:'👘',bg:'linear-gradient(135deg,#d5f5f5,#d5e8f5)',name:'改良旗袍·江南水乡款',shop:'云间织造·原创品牌',tags:[['scene','旅行/拍照'],['fit','梨形友好'],['fabric','棉麻混纺'],['service','易打理']],price:'¥1,080',bc:'pb-gray',badge:'设计师款',pp:null},
+    {e:'👗',bg:'linear-gradient(135deg,#fff0d5,#f5f5d5)',name:'旅行轻便新中式套装',shop:'墨染设计工作室',tags:[['scene','旅行/日常'],['fit','标准身材'],['fabric','速干面料'],['service','防皱耐洗']],price:'¥960',bc:'pb-gray',badge:'设计师款',pp:null},
+    {e:'🎒',bg:'linear-gradient(135deg,#e8d5f5,#d5f5d5)',name:'国风刺绣旅行双肩包',shop:'旗韵配件官方',tags:[['scene','旅行必备'],['fabric','帆布+刺绣'],['service','大容量']],price:'¥468',bc:'pb-g',badge:'出行推荐',pp:null},
+  ],
+  '日常':[
+    {e:'👗',bg:'linear-gradient(135deg,#f5d5d5,#f5e8d5)',name:'新中式印花棉麻旗袍',shop:'素言·国潮旗袍',tags:[['scene','日常改良'],['fit','小个子友好'],['fabric','棉麻'],['service','可试穿']],price:'¥880',bc:'pb-g',badge:'日常爆款',pp:null},
+    {e:'👘',bg:'linear-gradient(135deg,#d5e8f5,#e8d5f5)',name:'香云纱短款改良旗袍',shop:'汉尚华莲·国风旗舰',tags:[['scene','日常/通勤'],['fit','通用'],['fabric','香云纱'],['service','可改衣']],price:'¥1,680',bc:'pb-g',badge:'经典款',pp:'面料：香云纱\n特性：防晒透气'},
+    {e:'👗',bg:'linear-gradient(135deg,#e8f5d5,#f5f5d5)',name:'亚麻拼接新中式裙',shop:'墨染设计工作室',tags:[['scene','日常/休闲'],['fit','微胖友好'],['fabric','亚麻拼接'],['service','可改衣']],price:'¥560',bc:'pb-gray',badge:'设计师款',pp:null},
+    {e:'👘',bg:'linear-gradient(135deg,#fdf4e4,#f9ebe3)',name:'米白绸缎改良旗袍',shop:'云间织造·原创品牌',tags:[['scene','日常/轻正式'],['fit','高个子优选'],['fabric','绸缎'],['service','可试穿']],price:'¥1,280',bc:'pb-gray',badge:'设计师款',pp:null},
+    {e:'🧣',bg:'linear-gradient(135deg,#f7e6ec,#fdf4e4)',name:'云纹真丝丝巾·暗红版',shop:'旗韵文创官方',tags:[['scene','日常搭配'],['fabric','100%桑蚕丝'],['service','礼盒包装']],price:'¥298',bc:'pb-r',badge:'新品',pp:null},
+    {e:'👡',bg:'linear-gradient(135deg,#fff0d5,#ffd5e8)',name:'中式绣花布鞋·日常款',shop:'古意制鞋·手工坊',tags:[['scene','日常/舒适'],['fabric','棉布+刺绣'],['service','可定制']],price:'¥288',bc:'pb-gray',badge:'搭配推荐',pp:null},
+  ],
+  '小个子':[
+    {e:'👗',bg:'linear-gradient(135deg,#fff0d5,#ffd5e8)',name:'浅色玉兰短旗袍（155以下）',shop:'云间织造·原创品牌',tags:[['scene','小个子专属'],['fit','155cm以下优先'],['fabric','真丝电力纺'],['service','免费改短']],price:'¥980',bc:'pb-r',badge:'小个子爆款',pp:null},
+    {e:'👘',bg:'linear-gradient(135deg,#d5f5d5,#d5d5f5)',name:'高立领修身旗袍·显高款',shop:'素言·国潮旗袍',tags:[['scene','小个子必选'],['fit','显高5cm'],['fabric','棉麻'],['service','可改衣']],price:'¥980',bc:'pb-g',badge:'显高推荐',pp:null},
+    {e:'👗',bg:'linear-gradient(135deg,#f5d5d5,#f5e8d5)',name:'A字摆短旗袍·小个子福音',shop:'汉尚华莲·国风旗舰',tags:[['scene','小个子/日常'],['fit','A字摆显高'],['fabric','香云纱'],['service','可试穿']],price:'¥1,280',bc:'pb-g',badge:'国潮大牌',pp:null},
+    {e:'👘',bg:'linear-gradient(135deg,#e8d5f5,#d5e8f5)',name:'竖条纹改良旗袍·视觉拉高',shop:'墨染设计工作室',tags:[['scene','小个子/通勤'],['fit','竖条纹显高'],['fabric','棉麻'],['service','可改衣']],price:'¥760',bc:'pb-gray',badge:'设计师款',pp:null},
+    {e:'👠',bg:'linear-gradient(135deg,#fdf4e4,#f9ebe3)',name:'国风盘扣尖头高跟鞋',shop:'古意制鞋·手工坊',tags:[['scene','小个子增高'],['fabric','真皮'],['service','多跟高可选']],price:'¥580',bc:'pb-g',badge:'搭配必备',pp:null},
+  ],
+  '微胖':[
+    {e:'👘',bg:'linear-gradient(135deg,#f5f5d5,#d5f5f5)',name:'解构主义宽松新中式旗袍',shop:'墨染设计工作室',tags:[['scene','展览/艺术'],['fit','微胖友好'],['service','限量50件']],price:'¥680',bc:'pb-gray',badge:'设计师款',pp:null},
+    {e:'👗',bg:'linear-gradient(135deg,#e8f5d5,#f5f5d5)',name:'A字摆暗色系旗袍',shop:'素言·国潮旗袍',tags:[['scene','日常/通勤'],['fit','微胖显瘦'],['fabric','棉麻混纺'],['service','可试穿']],price:'¥1,080',bc:'pb-g',badge:'显瘦推荐',pp:null},
+    {e:'👘',bg:'linear-gradient(135deg,#d5e8f5,#e8d5f5)',name:'深色系直筒旗袍·竹节纹',shop:'汉尚华莲·国风旗舰',tags:[['scene','日常/轻正式'],['fit','微胖优选'],['fabric','香云纱'],['service','可改衣']],price:'¥1,860',bc:'pb-g',badge:'国潮大牌',pp:null},
+    {e:'👗',bg:'linear-gradient(135deg,#f5d5f5,#f5f5d5)',name:'宽松外搭中式长衫',shop:'云间织造·原创品牌',tags:[['scene','日常/遮肉'],['fit','微胖友好'],['fabric','亚麻'],['service','可试穿']],price:'¥560',bc:'pb-gray',badge:'设计师款',pp:null},
+  ],
+  '妈妈':[
+    {e:'👘',bg:'linear-gradient(135deg,#f7e6ec,#fdf4e4)',name:'苏绣云纹妈妈款旗袍',shop:'苏韵阁·非遗旗袍旗舰',tags:[['scene','妈妈辈/典礼'],['fit','优雅大气'],['fabric','苏绣真丝'],['service','可半定制']],price:'¥4,280',bc:'pb-r',badge:'非遗认证',pp:'面料：苏州真丝\n纹样：牡丹富贵\n制作人：王月华·传承人'},
+    {e:'👗',bg:'linear-gradient(135deg,#d5f5f5,#d5d5f5)',name:'藏蓝色改良旗袍·成熟款',shop:'汉尚华莲·国风旗舰',tags:[['scene','妈妈辈/日常'],['fit','优雅不显老'],['fabric','精纺棉'],['service','可改衣']],price:'¥1,680',bc:'pb-g',badge:'经典推荐',pp:null},
+    {e:'👘',bg:'linear-gradient(135deg,#e8d5f5,#d5f5d5)',name:'酱紫色绸缎旗袍',shop:'云间织造·原创品牌',tags:[['scene','妈妈辈/婚礼'],['fit','标准/偏丰'],['fabric','绸缎'],['service','可试穿']],price:'¥2,180',bc:'pb-gray',badge:'典雅推荐',pp:null},
+    {e:'👜',bg:'linear-gradient(135deg,#fdf3e4,#f9ebe3)',name:'国风真皮手提包·妈妈款',shop:'旗韵配件官方',tags:[['scene','妈妈辈配搭'],['fabric','头层牛皮'],['service','一年质保']],price:'¥788',bc:'pb-g',badge:'搭配推荐',pp:null},
+  ],
+  '配饰':[
+    {e:'💍',bg:'linear-gradient(135deg,#ffd5f5,#d5d5ff)',name:'旗袍盘扣银耳环套装',shop:'银花国风饰品',tags:[['scene','旗袍必备'],['fabric','925银·手工']],price:'¥198',bc:'pb-gray',badge:'爆款',pp:null},
+    {e:'🪭',bg:'linear-gradient(135deg,#f9ebe3,#f3e8df)',name:'旗韵团扇·苏绣联名款',shop:'旗韵文创官方',tags:[['scene','文创/礼品'],['fabric','苏绣工艺'],['service','限量200把']],price:'¥368',bc:'pb-r',badge:'限量版',pp:null},
+    {e:'🧣',bg:'linear-gradient(135deg,#79171C,#520F12)',name:'云纹真丝丝巾·暗红版',shop:'旗韵文创官方',tags:[['scene','搭配/礼品'],['fabric','100%桑蚕丝'],['service','礼盒包装']],price:'¥298',bc:'pb-r',badge:'新品',pp:null},
+    {e:'🧣',bg:'linear-gradient(135deg,#fbece5,#f9ebe3)',name:'云纹真丝丝巾·浅粉版',shop:'旗韵文创官方',tags:[['scene','搭配/礼品'],['fabric','100%桑蚕丝'],['service','礼盒包装']],price:'¥298',bc:'pb-gray',badge:'经典款',pp:null},
+    {e:'🏮',bg:'linear-gradient(135deg,#fdf3e4,#f9ebe3)',name:'旗韵宫扇摆件·品牌联名',shop:'旗韵文创官方',tags:[['scene','文创/礼品'],['fabric','纯铜支架'],['service','礼盒装']],price:'¥528',bc:'pb-g',badge:'礼品推荐',pp:null},
+    {e:'📿',bg:'linear-gradient(135deg,#ffd5f5,#d5f5f5)',name:'翡翠琉璃旗袍配珠串',shop:'古意珠宝坊',tags:[['scene','旗袍搭配'],['fabric','天然翡翠']],price:'¥486',bc:'pb-g',badge:'搭配推荐',pp:null},
+    {e:'🎁',bg:'linear-gradient(135deg,#d5f0ff,#f0d5ff)',name:'旗袍文化手账礼盒',shop:'旗韵文创官方',tags:[['scene','伴手礼/自用'],['service','含工艺科普手册']],price:'¥128',bc:'pb-gray',badge:'文创',pp:null},
+    {e:'💄',bg:'linear-gradient(135deg,#ffd5e8,#f5d5f5)',name:'国风妆容配色礼盒',shop:'花西子·国潮彩妆',tags:[['scene','旗袍妆容'],['service','礼盒装']],price:'¥688',bc:'pb-g',badge:'搭配推荐',pp:null},
+  ],
+};
+function prodCard(p){
+  const tags=p.tags.map(t=>`<span class="mtag mt-${t[0]}">${t[1]}</span>`).join('');
+  const pp=p.pp?`<span class="passport-link" onclick="event.stopPropagation();alert('工艺护照\\n${p.pp}')">📜 工艺护照</span>`:'';
+  return `<div class="prod" onclick="go('tryon')">
+    <div class="prod-img" style="background:${p.bg}">${p.e}
+      <div class="prod-overlay">一键 AI 试穿</div>
+      <div class="prod-badge ${p.bc}">${p.badge}</div>
+    </div>
+    <div class="prod-info">
+      <div class="prod-name">${p.name}</div>
+      <div class="prod-shop">${p.shop}</div>
+      <div class="meta-tags">${tags}</div>
+      <div class="prod-foot"><div class="prod-price">${p.price}</div>${pp}</div>
+    </div>
+  </div>`;
+}
+function renderProds(key){
+  const list=SCENE_DB[key]||SCENE_DB['通勤'];
+  document.getElementById('prod-grid').innerHTML=list.map(prodCard).join('');
+}
 function setScat(el){
   document.querySelectorAll('.scat').forEach(c=>c.classList.remove('on'));
   el.classList.add('on');
+  renderProds(el.dataset.key);
 }
 function toggleManual(){
   const s=document.getElementById('manual-sec');
@@ -1028,6 +1200,9 @@ function swWTab(id,el){
     if(e)e.style.display=x===id?(x==='ppassport'?'block':'grid'):'none';
   });
 }
+
+/* 初始化商城商品 */
+renderProds('通勤');
 
 /* ====== 修复所有交互 ====== */
 // 多选chip（场景偏好、风格偏好）

@@ -389,17 +389,22 @@ button{font-family:inherit;}
 <nav class="nav">
   <div class="logo" onclick="go('home')">
     <svg class="logo-mark" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0" y="0" width="36" height="36" rx="10" fill="#79171C"/>
-      <path d="M15 12 Q7 22 9 34" stroke="#F5E4D8" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-      <path d="M17.5 11 Q11 22 13.5 34" stroke="#F5E4D8" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-      <path d="M18.5 11 Q25 22 22.5 34" stroke="#F5E4D8" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-      <path d="M21 12 Q29 22 27 34" stroke="#F5E4D8" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-      <line x1="14.5" y1="5.8" x2="19.5" y2="10.2" stroke="#F5E4D8" stroke-width="1.7" stroke-linecap="round"/>
-      <line x1="19.5" y1="5.8" x2="14.5" y2="10.2" stroke="#F5E4D8" stroke-width="1.7" stroke-linecap="round"/>
-      <circle cx="14.5" cy="5.5" r="1.35" fill="#F5E4D8"/>
-      <circle cx="19.5" cy="5.5" r="1.35" fill="#F5E4D8"/>
-      <circle cx="14.5" cy="10.5" r="1.35" fill="#F5E4D8"/>
-      <circle cx="19.5" cy="10.5" r="1.35" fill="#F5E4D8"/>
+      <rect x="0" y="0" width="36" height="36" rx="13" fill="#79171C"/>
+      <!-- 左外弧 (C形，向左弓出) -->
+      <path d="M4.5 3.5 C1.2 12 1.2 24 4.5 33" stroke="#F5E4D8" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+      <!-- 左内弧 -->
+      <path d="M10 3 C7 12 7 24 10 33" stroke="#F5E4D8" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+      <!-- 右内弧 (镜像) -->
+      <path d="M26 3 C29 12 29 24 26 33" stroke="#F5E4D8" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+      <!-- 右外弧 (镜像) -->
+      <path d="M31.5 3.5 C34.8 12 34.8 24 31.5 33" stroke="#F5E4D8" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+      <!-- 盘扣: 斜向针杆 -->
+      <line x1="11" y1="11.5" x2="19" y2="3.5" stroke="#F5E4D8" stroke-width="3.8" stroke-linecap="round"/>
+      <!-- 盘扣: 钩环 -->
+      <path d="M11.5 12 C9 13.5 9 17 12.5 16" stroke="#F5E4D8" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+      <!-- 盘扣: 端点圆 -->
+      <circle cx="19.5" cy="3" r="1.4" fill="#F5E4D8"/>
+      <circle cx="13" cy="16.5" r="1.4" fill="#F5E4D8"/>
     </svg>
     <span class="logo-name">旗韵</span>
   </div>
@@ -438,17 +443,15 @@ button{font-family:inherit;}
       <!-- 品牌标识（仿海报左下角排版） -->
       <div class="hero-brand-foot">
         <svg width="28" height="28" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0" y="0" width="36" height="36" rx="10" fill="rgba(255,255,255,.14)"/>
-          <path d="M15 12 Q7 22 9 34" stroke="rgba(255,255,255,.85)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          <path d="M17.5 11 Q11 22 13.5 34" stroke="rgba(255,255,255,.85)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          <path d="M18.5 11 Q25 22 22.5 34" stroke="rgba(255,255,255,.85)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          <path d="M21 12 Q29 22 27 34" stroke="rgba(255,255,255,.85)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          <line x1="14.5" y1="5.8" x2="19.5" y2="10.2" stroke="rgba(255,255,255,.85)" stroke-width="1.6" stroke-linecap="round"/>
-          <line x1="19.5" y1="5.8" x2="14.5" y2="10.2" stroke="rgba(255,255,255,.85)" stroke-width="1.6" stroke-linecap="round"/>
-          <circle cx="14.5" cy="5.5" r="1.3" fill="rgba(255,255,255,.85)"/>
-          <circle cx="19.5" cy="5.5" r="1.3" fill="rgba(255,255,255,.85)"/>
-          <circle cx="14.5" cy="10.5" r="1.3" fill="rgba(255,255,255,.85)"/>
-          <circle cx="19.5" cy="10.5" r="1.3" fill="rgba(255,255,255,.85)"/>
+          <rect x="0" y="0" width="36" height="36" rx="13" fill="rgba(255,255,255,.14)"/>
+          <path d="M4.5 3.5 C1.2 12 1.2 24 4.5 33" stroke="rgba(255,255,255,.82)" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          <path d="M10 3 C7 12 7 24 10 33" stroke="rgba(255,255,255,.82)" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          <path d="M26 3 C29 12 29 24 26 33" stroke="rgba(255,255,255,.82)" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          <path d="M31.5 3.5 C34.8 12 34.8 24 31.5 33" stroke="rgba(255,255,255,.82)" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          <line x1="11" y1="11.5" x2="19" y2="3.5" stroke="rgba(255,255,255,.82)" stroke-width="3.8" stroke-linecap="round"/>
+          <path d="M11.5 12 C9 13.5 9 17 12.5 16" stroke="rgba(255,255,255,.82)" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+          <circle cx="19.5" cy="3" r="1.4" fill="rgba(255,255,255,.82)"/>
+          <circle cx="13" cy="16.5" r="1.4" fill="rgba(255,255,255,.82)"/>
         </svg>
         <div class="hero-brand-text"><small>qi</small>旗&nbsp;&nbsp;&nbsp;<small>yun</small>韵</div>
       </div>
